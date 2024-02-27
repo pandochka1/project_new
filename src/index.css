@@ -7,7 +7,59 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+/* Чему равен 1 Рем? */
+/* Значение 1rem соответствует размеру шрифта корневого элемента (обычно это тег <html> ). Например, если размер шрифта корневого элемента равен 16 пикселям, то размер шрифта 1rem будет также равен 16 пикселям. */
+/* добавим свои св-ва */
+nav {
+  padding: 0 50px;
+}
+
+footer {
+  padding: 0 20px;
+}
+
+.content {
+  /* шапка - 56 */
+  /* подвал - 70  */
+  min-height: calc(100vh - 64px - 70px);
+  padding: 30px;
+}
+
+
+
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px 150px;
+}
+
+.search {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  grid-column-gap: 50px;
+  margin: 0 10%;
+}
+
+.search a {
+  align-self: center;
+  height: 100%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* настройка радиометок */
+.radio_Movies {
+  padding: 20px;
+  display: flex;
+  gap: 100px;
+  justify-content: center;
 }
