@@ -11,3 +11,25 @@
 Перед тем , как начать это делать , необходимо остановить локальный сервер 
 
 1. создаем файл .env.local (файлы с локальными переменными , игнорируются при выгрузке в git)
+
+
+
+git
+1) git add -A внести изменения  в текущий статус 
+2) $ git commit -m "loading the project"
+3) создаем репозиторий
+4) копируем git remote add origin https://github.com/pandochka1/movie_react.git
+5) git push -u origin master - объеденить ветки
+6) обновить страницу в git 
+7) перейти в настройки 
+8) перейдем на вкладку secrets -> Codespaces secrets
+9) создать новый секрет Codespaces secrets / New secret
+Указать имя переменной и ее значение
+
+10) утановим через терминал зависмость pages 
+npm install gh-pages --save-dev
+
+11) добавить в package.json "deploy": "gh-pages -d build"
+12) можно также добавить  "predeploy": "npm run build"
+13) добавить   
+"homepage": "https://pandochka1.github.io/movie_react",
