@@ -33,3 +33,13 @@ npm install gh-pages --save-dev
 12) можно также добавить  "predeploy": "npm run build"
 13) добавить   
 "homepage": "https://pandochka1.github.io/movie_react",
+
+14) сохраним изменения $ git add -A
+15) $ git commit -m "gh pages add"
+16) $ npm run deploy
+17) Появится 2-я ветка 
+18) при загрузки будет ошибка , добавим исключение на ошибку 
+19) также добавить s в протаколе 
+20) снова выполним 16) $ npm run deploy
+
+

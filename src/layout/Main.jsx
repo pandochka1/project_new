@@ -14,25 +14,27 @@ class Main extends React.Component {
         loading: true, //при старте страницы 
     }
 
-    // Каждый компонент React проходит несколько стадий в процессе своей жизни: он создается, затем добавляется в DOM, получает пропсы, и, наконец, удаляется из дерева. Этот процесс называют жизненным циклом компонента (Component Lifecycle). React предоставляет набор методов, которые позволяют встроиться в этот процесс.
-
     componentDidMount() {
-        // fetch('http://www.omdbapi.com/?apikey=c98ebacb&s=marvel')
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=marvel`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=marvel`)
             .then(response => response.json()) //преобрзовать 
             .then(data => this.setState({ movies: data.Search, loading: false })) //получение данных из запроса
+            .catch(err => {
+                console.log(err);
+                this.setState({ loading: false });
+            })
     }
 
     // Обновление фильмов при поиске
     searchMovies = (str, type = 'all') => {
-        // При начале загрузки - 
         this.setState({ loading: true });
-        // принимает поисковую строку
-        // fetch(`http://www.omdbapi.com/?apikey=c98ebacb&s=${str}${type !== 'all' ? `&type=${type}` : ''}`)
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${str}${type !== 'all' ? `&type=${type}` : ''}`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${str}${type !== 'all' ? `&type=${type}` : ''}`)
             // передаем строку , которая была передана
             .then(response => response.json())
             .then(data => this.setState({ movies: data.Search, loading: false }))
+            .catch(err => {
+                console.log(err);
+                this.setState({ loading: false });
+            })
     }
 
 

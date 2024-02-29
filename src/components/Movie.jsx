@@ -19,7 +19,7 @@ function Movie(props) {
             {/* некоторые посторы могут приходить пустыми , поэтому добавим проверку */}
             {
                 poster === 'N/A' ?
-                    <img src={`https://placehold.co/300x4s50?text=${title}`} />
+                    <img src={`https://placehold.co/300x450?text=${title}`} />
                     : <img className="activator" src={poster} />
             }
 
